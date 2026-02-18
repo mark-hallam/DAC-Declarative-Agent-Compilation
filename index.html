@@ -550,11 +550,11 @@ footer .footer-legal p {
 
     <div class="setup-instructions" style="margin-top:20px; background: var(--white); border: 2px solid var(--blue-light);">
       <h3>How to Use</h3>
-      <p style="margin-bottom:12px">Once the two files above are in place, DAC activates automatically. The entire workflow is <strong>3 human messages total</strong> &mdash; a critical improvement over GYSOM v2 which required 6-40+ messages due to phase-by-phase approval stops:</p>
+      <p style="margin-bottom:12px">Once the two files above are in place, DAC activates automatically. The entire workflow is <strong>3 human messages total</strong> &mdash; a critical improvement over GYSOM v2 which required 5-7 messages due to phase-by-phase approval stops:</p>
       <p><strong>Message 1 &mdash; Describe your project in Cowork.</strong> Open a new task window in Claude Cowork, point it at your working folder, and describe the entire project you want to build. Don't hold back &mdash; include every feature, integration, and requirement. the compiler will respond with a decision batch containing every choice needed for the build, with recommended defaults.</p>
       <p style="margin-top:10px"><strong>Message 2 &mdash; Answer the decision batch.</strong> Accept the defaults, override what you want, and hit send. After this response, the compiler produces <em>everything</em> in a single output: CLAUDE.md, execution map, conflict matrix, cost estimate, every session package, and the launch command. All saved directly to your working folder. <strong>No more phase-by-phase approval.</strong> No "shall I continue?" prompts. The compiler runs straight through Phases 2-5 autonomously &mdash; this was the #1 pain point fixed from GYSOM v2.</p>
       <p style="margin-top:10px"><strong>Message 3 &mdash; Issue the launch command in Code.</strong> Open Claude Code pointing at the same folder. Tell it to execute the compiled session packages. The orchestrator (running Opus 4.6) reads the execution map, dispatches sessions as parallel subagents at their assigned model and effort levels, verifies each one on completion, and cascades through the entire build autonomously. Layers execute in sequence, sessions within each layer run in parallel. No further input needed.</p>
-      <p style="margin-top:14px; color: var(--muted); font-size: 14px; font-family: var(--font-ui);"><em>That's it. 3 messages. GYSOM v2 needed 6-40+ for the same result. Full autonomous execution with intelligent model routing.</em></p>
+      <p style="margin-top:14px; color: var(--muted); font-size: 14px; font-family: var(--font-ui);"><em>That's it. 3 messages. GYSOM v2 needed 5-7 for the same result. Full autonomous execution with intelligent model routing.</em></p>
     </div>
 
     <!-- Tabs -->
@@ -749,7 +749,7 @@ DAC v3.0 leverages both Opus 4.6 and Sonnet 4.6 to optimize cost and quality acr
           </tr>
           <tr>
             <td style="padding:8px 12px; font-weight:600; color:var(--navy);">Human Messages</td>
-            <td style="padding:8px 12px; color:var(--muted);">6-40+ per project</td>
+            <td style="padding:8px 12px; color:var(--muted);">5-7 per project</td>
             <td style="padding:8px 12px;">3 total (describe, decide, launch)</td>
           </tr>
         </tbody>
@@ -960,8 +960,8 @@ DAC v3.0 leverages both Opus 4.6 and Sonnet 4.6 to optimize cost and quality acr
             </tr>
             <tr>
               <td style="padding:8px 12px; font-weight:600;">Total human messages</td>
-              <td style="padding:8px 12px; text-align:center; color:var(--muted); font-weight:600;">6-40+</td>
-              <td style="padding:8px 12px; text-align:center; color:var(--muted); font-weight:600;">6-40+</td>
+              <td style="padding:8px 12px; text-align:center; color:var(--muted); font-weight:600;">5-7</td>
+              <td style="padding:8px 12px; text-align:center; color:var(--muted); font-weight:600;">5-7</td>
               <td style="padding:8px 12px; text-align:center; color:var(--green); font-weight:700;">3</td>
             </tr>
           </tbody>
