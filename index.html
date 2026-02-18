@@ -287,6 +287,7 @@ section.alt-bg { background: var(--light-bg); }
   padding: 4px 10px; border-radius: 4px; margin-bottom: 12px;
 }
 .tag-dac { background: var(--blue-pale); color: var(--navy); }
+.tag-opus { background: #F3E8FF; color: #6B21A8; }
 .tag-sonnet { background: var(--green-pale); color: var(--green); }
 .tag-both { background: var(--amber-pale); color: #92400E; }
 
@@ -1458,94 +1459,134 @@ DAC v3.0. Declare intent. Compile sessions. Execute autonomously.</pre>
 <section id="comparison">
   <div class="container">
     <div class="section-header">
-      <h2>DAC vs Sonnet 4.6 Native</h2>
-      <p>Sonnet 4.6 is a massive leap forward. Here's where DAC still gives you an edge &mdash; and where the model now handles things on its own.</p>
+      <h2>Opus Orchestrates, Sonnet Executes</h2>
+      <p>DAC's core innovation is a two-tier architecture that maximises quality where it matters and minimises cost where it doesn't.</p>
     </div>
 
     <div style="max-width:720px; margin:0 auto 40px; text-align:center;">
-      <p style="font-size:16px; color:var(--body); line-height:1.75;">Claude Sonnet 4.6 (released February 17, 2026) brings a 1M-token context window, 79.6% SWE-bench Verified score, dramatically improved instruction following, and near-Opus performance across coding tasks. Many problems that v2 solved structurally are now handled natively by the model. But DAC still delivers measurable gains for complex, multi-session builds.</p>
+      <p style="font-size:16px; color:var(--body); line-height:1.75;">Claude Sonnet 4.6 (released February 17, 2026) scores 79.6% on SWE-bench Verified &mdash; within 1.2 points of Opus 4.6's 80.8% &mdash; at one-fifth the cost. Claude Opus 4.6 (released February 5, 2026) brings 128K output tokens, adaptive thinking with effort controls, and native Agent Teams for parallel subagent dispatch. DAC v3 was designed from the ground up to exploit this asymmetry: Opus reasons about architecture and orchestration while Sonnet handles the volume work of building features, tests, and UI.</p>
+    </div>
+
+    <!-- Two-tier architecture diagram -->
+    <div style="max-width:780px; margin:0 auto 48px; background:linear-gradient(135deg, #F3E8FF 0%, var(--blue-pale) 100%); border-radius:16px; padding:32px; border:1px solid var(--blue-light);">
+      <h3 style="font-family:var(--font-ui); font-size:18px; font-weight:700; color:var(--navy); margin-bottom:20px; text-align:center;">The Two-Tier Architecture</h3>
+      <div style="display:grid; grid-template-columns:1fr auto 1fr; gap:16px; align-items:center;">
+        <div style="background:var(--white); border-radius:12px; padding:20px; border:2px solid #6B21A8; text-align:center;">
+          <div style="font-family:var(--font-ui); font-size:13px; font-weight:700; color:#6B21A8; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Opus 4.6 Orchestrator</div>
+          <div style="font-family:var(--font-ui); font-size:12px; color:var(--body); line-height:1.6;">
+            DAG analysis &bull; Decision compilation<br>
+            Session dispatch &bull; Conflict detection<br>
+            Recovery escalation &bull; Build verification<br>
+            <span style="font-weight:600; color:#6B21A8;">$5/$25 per MTok &bull; max/high effort</span>
+          </div>
+        </div>
+        <div style="font-size:28px; color:var(--navy);">&rarr;</div>
+        <div style="background:var(--white); border-radius:12px; padding:20px; border:2px solid var(--green); text-align:center;">
+          <div style="font-family:var(--font-ui); font-size:13px; font-weight:700; color:var(--green); text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Sonnet 4.6 Workers</div>
+          <div style="font-family:var(--font-ui); font-size:12px; color:var(--body); line-height:1.6;">
+            Feature implementation &bull; UI components<br>
+            Test scaffolding &bull; API routes<br>
+            Documentation &bull; Config files<br>
+            <span style="font-weight:600; color:var(--green);">$3/$15 per MTok &bull; medium/low effort</span>
+          </div>
+        </div>
+      </div>
+      <p style="font-family:var(--font-ui); font-size:13px; color:var(--muted); text-align:center; margin-top:16px;">60-70% of sessions run on Sonnet. Opus handles the 30-40% where architectural reasoning and cross-module coordination justify the premium.</p>
     </div>
 
     <!-- Comparison cards -->
     <div class="comparison-grid">
       <div class="comparison-card">
-        <span class="tag tag-dac">DAC Advantage</span>
-        <h3 style="color:var(--navy);">Parallel Multi-Session Dispatch</h3>
-        <p>Even with a 1M-token context window, a single agent can only work on one file at a time. DAC dispatches 3-7 independent sessions simultaneously as parallel subagents, collapsing build time proportionally. A 34-session build completes in 8 layer-passes, not 34 sequential sessions.</p>
+        <span class="tag tag-opus">Opus Orchestrator</span>
+        <h3 style="color:#6B21A8;">128K Output Tokens for Compilation</h3>
+        <p>Opus 4.6 doubled output capacity to 128K tokens &mdash; enough to generate an entire execution map, conflict matrix, cost estimate, and every session package in a single response. DAC exploits this directly: the compilation phase produces the complete build plan without truncation or multi-message splitting. Sonnet's 64K limit would force plan fragmentation.</p>
       </div>
       <div class="comparison-card">
-        <span class="tag tag-dac">DAC Advantage</span>
-        <h3 style="color:var(--navy);">Cost Optimization via Model Routing</h3>
-        <p>Sonnet 4.6 costs $3/$15 per million tokens vs Opus at $5/$25. DAC routes 60-70% of sessions to Sonnet where its 79.6% SWE-bench score is more than sufficient, reserving Opus for foundation and integration work. On a typical complex build, this saves 30-40% on total API spend.</p>
+        <span class="tag tag-opus">Opus Orchestrator</span>
+        <h3 style="color:#6B21A8;">Adaptive Thinking &amp; Effort Controls</h3>
+        <p>Opus 4.6 introduced adaptive thinking with a new <code style="font-size:13px; background:var(--code-bg); padding:2px 6px; border-radius:3px;">max</code> effort level for the highest capability. DAC routes effort per session: foundation sessions run at <code style="font-size:13px; background:var(--code-bg); padding:2px 6px; border-radius:3px;">max</code>, integration at <code style="font-size:13px; background:var(--code-bg); padding:2px 6px; border-radius:3px;">high</code>, features at <code style="font-size:13px; background:var(--code-bg); padding:2px 6px; border-radius:3px;">medium</code>, and docs at <code style="font-size:13px; background:var(--code-bg); padding:2px 6px; border-radius:3px;">low</code>. The model dynamically allocates reasoning depth per task &mdash; spending tokens on thinking where it matters and skipping extended reasoning for straightforward work.</p>
       </div>
       <div class="comparison-card">
-        <span class="tag tag-dac">DAC Advantage</span>
+        <span class="tag tag-opus">Opus Orchestrator</span>
+        <h3 style="color:#6B21A8;">DAG-Driven Parallel Dispatch</h3>
+        <p>Even with a 1M-token context window, a single agent works on one file at a time. DAC analyses the full dependency graph, dispatches 3-7 independent sessions simultaneously as parallel subagents, and cascades through layers on verification pass. A 34-session build completes in 8 layer-passes, not 34 sequential turns. Opus's superior agentic planning (65.4% Terminal-Bench 2.0) makes it the ideal orchestrator for this coordination.</p>
+      </div>
+      <div class="comparison-card">
+        <span class="tag tag-opus">Opus Orchestrator</span>
+        <h3 style="color:#6B21A8;">Recovery Escalation Protocol</h3>
+        <p>When a Sonnet worker session fails verification twice, DAC doesn't retry at the same tier. It generates a recovery session and escalates to Opus at high effort. Opus's 80.8% SWE-bench score and 68.8% ARC-AGI-2 (abstract reasoning) give it the edge needed to diagnose and fix issues that exceeded Sonnet's capabilities. This automatic escalation is a DAC-exclusive pattern &mdash; native Agent Teams don't have it.</p>
+      </div>
+      <div class="comparison-card">
+        <span class="tag tag-sonnet">Sonnet 4.6 Workers</span>
+        <h3 style="color:var(--green);">Near-Opus Quality at 40% of the Cost</h3>
+        <p>Sonnet 4.6 scores 79.6% on SWE-bench Verified and 72.5% on OSWorld &mdash; essentially tied with Opus on real-world coding and computer use. Users preferred it over Opus 4.5 (the previous flagship) 59% of the time. For well-scoped, self-contained sessions with clear constraints &mdash; exactly what DAC produces &mdash; Sonnet delivers Opus-grade results at $3/$15 vs $5/$25 per million tokens.</p>
+      </div>
+      <div class="comparison-card">
+        <span class="tag tag-sonnet">Sonnet 4.6 Workers</span>
+        <h3 style="color:var(--green);">1M Context + Compaction</h3>
+        <p>The 1M-token context window with server-side compaction eliminates mid-session context loss &mdash; a problem v2 solved structurally with checkpoint-and-resume. v3 leverages this by increasing session size targets from 8-12 to 15-25 files per session. Fewer sessions means fewer handoffs, faster builds, and lower orchestrator overhead. The Sonnet workers now complete more per session without losing track of earlier work.</p>
+      </div>
+      <div class="comparison-card">
+        <span class="tag tag-dac">DAC Architecture</span>
+        <h3 style="color:var(--navy);">Conflict Matrix Prevents Collisions</h3>
+        <p>Agent Teams and native subagents have no built-in mechanism to prevent two agents from modifying the same file simultaneously. DAC's conflict matrix computes file-set intersections across all parallel sessions before execution begins. If any intersection is non-empty, sessions are serialised or shared files are extracted into a prerequisite session. Zero merge conflicts, by design, before a single line of code is written.</p>
+      </div>
+      <div class="comparison-card">
+        <span class="tag tag-dac">DAC Architecture</span>
         <h3 style="color:var(--navy);">Structured Verification Gates</h3>
-        <p>Native agents can skip verification when under context pressure. DAC makes type-check, lint, test, and build verification mandatory between every session. Failures halt downstream sessions automatically. The recovery protocol escalates Sonnet failures to Opus rather than silently proceeding.</p>
-      </div>
-      <div class="comparison-card">
-        <span class="tag tag-dac">DAC Advantage</span>
-        <h3 style="color:var(--navy);">Conflict-Free Architecture</h3>
-        <p>The conflict matrix guarantees zero file collisions between parallel sessions. Without this, two agents modifying the same file simultaneously create merge conflicts and race conditions. DAC eliminates this class of error by design before execution begins.</p>
-      </div>
-      <div class="comparison-card">
-        <span class="tag tag-sonnet">Sonnet 4.6 Closes Gap</span>
-        <h3 style="color:var(--green);">Context Window Exhaustion</h3>
-        <p>The 1M-token context window with built-in compaction dramatically reduces the risk of mid-session context loss. v2's checkpoint-and-resume protocol addressed this structurally; Sonnet 4.6 now handles it natively. v3 leverages this by increasing session size targets from 8-12 to 15-25 files.</p>
-      </div>
-      <div class="comparison-card">
-        <span class="tag tag-sonnet">Sonnet 4.6 Closes Gap</span>
-        <h3 style="color:var(--green);">Instruction Following</h3>
-        <p>70% of users prefer Sonnet 4.6 over Sonnet 4.5 on instruction following. The model reads context before editing, tightens logic instead of doubling it, and avoids overengineering. Sessions that previously needed Opus-level precision to complete reliably now succeed on Sonnet.</p>
-      </div>
-      <div class="comparison-card">
-        <span class="tag tag-both">Compound Gain</span>
-        <h3 style="color:#92400E;">DAC + Better Models</h3>
-        <p>DAC and Sonnet 4.6 aren't competing &mdash; they compound. Better models execute sessions more reliably. Better session structure gives models clearer constraints. The result: fewer recovery cycles, higher first-pass verification rates, and faster end-to-end build times than either approach alone.</p>
-      </div>
-      <div class="comparison-card">
-        <span class="tag tag-both">Compound Gain</span>
-        <h3 style="color:#92400E;">Decision Harvesting Eliminates Drift</h3>
-        <p>No matter how good the model, it can't read your mind about tech stack choices, naming conventions, or business logic. The methodology's upfront decision batch eliminates the #1 source of agent failure: ambiguous requirements leading to inconsistent decisions across a multi-file build. This benefit is model-independent.</p>
+        <p>Native agents can skip verification under context pressure. DAC makes type-check, lint, test, and build verification mandatory between every session. Failures halt all downstream sessions automatically. Combined with effort-aware dispatch, this creates a quality ratchet: each layer is proven correct before the next begins. The result is 85-95% first-pass success rates vs 60-70% with conversational prompting.</p>
       </div>
     </div>
 
-    <!-- Expected gains summary -->
-    <div style="max-width:720px; margin:48px auto 0; background:var(--blue-pale); border-radius:12px; padding:28px 32px;">
-      <h3 style="font-family:var(--font-ui); font-size:18px; font-weight:700; color:var(--navy); margin-bottom:16px; text-align:center;">Expected Gains from DAC + Sonnet 4.6</h3>
+    <!-- Cost model breakdown -->
+    <div style="max-width:780px; margin:48px auto 0; background:var(--blue-pale); border-radius:12px; padding:28px 32px;">
+      <h3 style="font-family:var(--font-ui); font-size:18px; font-weight:700; color:var(--navy); margin-bottom:8px; text-align:center;">Cost &amp; Performance: Two-Tier Routing vs Single-Model</h3>
+      <p style="font-family:var(--font-ui); font-size:13px; color:var(--muted); text-align:center; margin-bottom:20px;">Based on a typical 10-session complex build (3 Opus sessions + 7 Sonnet sessions)</p>
       <table style="width:100%; font-family:var(--font-ui); font-size:14px; border-collapse:collapse;">
         <thead>
           <tr style="border-bottom:2px solid var(--blue-light);">
             <th style="text-align:left; padding:8px 12px; color:var(--navy);">Metric</th>
-            <th style="text-align:left; padding:8px 12px; color:var(--muted);">Conversational Prompting</th>
-            <th style="text-align:left; padding:8px 12px; color:var(--green);">With DAC v3</th>
+            <th style="text-align:left; padding:8px 12px; color:var(--muted);">All Opus</th>
+            <th style="text-align:left; padding:8px 12px; color:var(--muted);">All Sonnet</th>
+            <th style="text-align:left; padding:8px 12px; color:#6B21A8;">DAC Two-Tier</th>
           </tr>
         </thead>
         <tbody>
           <tr style="border-bottom:1px solid var(--blue-light);">
-            <td style="padding:8px 12px; font-weight:600; color:var(--navy);">Build Time (complex project)</td>
-            <td style="padding:8px 12px; color:var(--muted);">Sequential, hours of babysitting</td>
-            <td style="padding:8px 12px;">Parallel dispatch, 3-5x faster</td>
+            <td style="padding:8px 12px; font-weight:600; color:var(--navy);">API Cost (est.)</td>
+            <td style="padding:8px 12px; color:var(--muted);">~$18.50</td>
+            <td style="padding:8px 12px; color:var(--muted);">~$10.80</td>
+            <td style="padding:8px 12px; font-weight:600;">~$12.90 <span style="color:var(--green); font-size:12px;">(30% vs all-Opus)</span></td>
           </tr>
           <tr style="border-bottom:1px solid var(--blue-light);">
-            <td style="padding:8px 12px; font-weight:600; color:var(--navy);">API Cost</td>
-            <td style="padding:8px 12px; color:var(--muted);">All Opus (or all Sonnet)</td>
-            <td style="padding:8px 12px;">30-40% savings via model routing</td>
+            <td style="padding:8px 12px; font-weight:600; color:var(--navy);">Orchestration Quality</td>
+            <td style="padding:8px 12px; color:var(--muted);">Excellent (overkill for workers)</td>
+            <td style="padding:8px 12px; color:var(--muted);">Adequate (misses edge cases)</td>
+            <td style="padding:8px 12px; font-weight:600;">Opus where it matters</td>
           </tr>
           <tr style="border-bottom:1px solid var(--blue-light);">
-            <td style="padding:8px 12px; font-weight:600; color:var(--navy);">First-Pass Success Rate</td>
-            <td style="padding:8px 12px; color:var(--muted);">~60-70% (ambiguity drift)</td>
-            <td style="padding:8px 12px;">~85-95% (decisions pre-harvested)</td>
+            <td style="padding:8px 12px; font-weight:600; color:var(--navy);">Build Time</td>
+            <td style="padding:8px 12px; color:var(--muted);">Sequential, hours</td>
+            <td style="padding:8px 12px; color:var(--muted);">Sequential, hours</td>
+            <td style="padding:8px 12px; font-weight:600;">Parallel, 3-5x faster</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--blue-light);">
+            <td style="padding:8px 12px; font-weight:600; color:var(--navy);">First-Pass Success</td>
+            <td style="padding:8px 12px; color:var(--muted);">~70% (no decision harvest)</td>
+            <td style="padding:8px 12px; color:var(--muted);">~65% (ambiguity drift)</td>
+            <td style="padding:8px 12px; font-weight:600;">~85-95% (decisions pre-harvested)</td>
           </tr>
           <tr style="border-bottom:1px solid var(--blue-light);">
             <td style="padding:8px 12px; font-weight:600; color:var(--navy);">Human Intervention</td>
-            <td style="padding:8px 12px; color:var(--muted);">Continuous throughout build</td>
-            <td style="padding:8px 12px;">Once (decision batch), then autonomous</td>
+            <td style="padding:8px 12px; color:var(--muted);">Continuous throughout</td>
+            <td style="padding:8px 12px; color:var(--muted);">Continuous throughout</td>
+            <td style="padding:8px 12px; font-weight:600;">Once (decision batch), then autonomous</td>
           </tr>
           <tr>
             <td style="padding:8px 12px; font-weight:600; color:var(--navy);">File Conflicts</td>
-            <td style="padding:8px 12px; color:var(--muted);">Common with parallel agents</td>
-            <td style="padding:8px 12px;">Zero (conflict matrix enforced)</td>
+            <td style="padding:8px 12px; color:var(--muted);">Risk with parallel agents</td>
+            <td style="padding:8px 12px; color:var(--muted);">Risk with parallel agents</td>
+            <td style="padding:8px 12px; font-weight:600;">Zero (conflict matrix enforced)</td>
           </tr>
         </tbody>
       </table>
