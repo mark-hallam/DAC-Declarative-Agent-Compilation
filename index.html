@@ -513,9 +513,121 @@ footer .footer-legal p {
       </div>
     </div>
 
-    <!-- Token usage screenshot -->
-    <div style="max-width:720px; margin:24px auto 0; border-radius:12px; overflow:hidden; border:1px solid var(--blue-light);">
-      <img src="Token usage 36 million.png" alt="Approximate token usage across build phases — ~36 million tokens total" style="width:100%; display:block;">
+    <!-- Complete Build Execution Map -->
+    <div class="exec-demo" style="max-width:880px; margin:40px auto 0; font-size:12px; line-height:1.7;">
+<pre style="margin:0; font-family:inherit; font-size:inherit; color:inherit; background:transparent; border:none; padding:0; white-space:pre; overflow-x:auto;">
+<span class="arrow">╔══════════════════════════════════════════════════════════════════════════════════╗</span>
+<span class="arrow">║</span>                    <span class="layer" style="font-size:14px;">PINDEO — GYSOM BUILD COMPLETE</span>                                <span class="arrow">║</span>
+<span class="arrow">║</span>                    <span class="meta">69 commits · 102k lines · 510 files · 49h 9m</span>                <span class="arrow">║</span>
+<span class="arrow">╚══════════════════════════════════════════════════════════════════════════════════╝</span>
+
+<span class="layer">PHASE 1 — SCAFFOLD</span>  <span class="meta">(30 commits, 68,435 lines)</span>
+<span class="pipe">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+  <span class="layer">LAYER 0 — Foundation</span> <span class="meta">[sequential]</span>
+  ├─ <span class="session">S01</span>  Monorepo scaffold (Turborepo, pnpm workspaces, TS config)          <span class="arrow">✅</span>
+  └─ <span class="session">S02</span>  Shared packages (types, constants, utils, config)                  <span class="arrow">✅</span>
+  <span class="layer">LAYER 1 — Scaffolds + Infra</span> <span class="meta">[parallel ×5]</span>
+  ├─ <span class="session">S03</span>  Fastify server scaffold + complete Prisma schema                   <span class="arrow">✅</span>
+  ├─ <span class="session">S04</span>  Python agent service scaffold (FastAPI, base agent class)          <span class="arrow">✅</span>
+  ├─ <span class="session">S05</span>  UI component library (shadcn/ui, custom components)                <span class="arrow">✅</span>
+  ├─ <span class="session">S06</span>  Docker Compose, Dockerfiles, GitHub Actions CI                     <span class="arrow">✅</span>
+  └─ <span class="session">S07</span>  Auth module (Clerk) + tRPC router scaffold                         <span class="arrow">✅</span>
+  <span class="layer">LAYER 2 — Core Services</span> <span class="meta">[parallel ×4]</span>
+  ├─ <span class="session">S08</span>  Redis client + BullMQ job queues + Socket.io WebSocket             <span class="arrow">✅</span>
+  ├─ <span class="session">S09</span>  LangGraph orchestrator + memory system + MCP tools                 <span class="arrow">✅</span>
+  ├─ <span class="session">S10</span>  Content module (CRUD, calendar, scheduling)                        <span class="arrow">✅</span>
+  └─ <span class="session">S11</span>  Social connections module (OAuth, webhooks, platform clients)      <span class="arrow">✅</span>
+  <span class="layer">LAYER 3 — Domain Modules</span> <span class="meta">[parallel ×6]</span>
+  ├─ <span class="session">S12</span>  Analytics module (ClickHouse + MeiliSearch)                        <span class="arrow">✅</span>
+  ├─ <span class="session">S13</span>  Billing module (Stripe subscriptions + usage tracking)             <span class="arrow">✅</span>
+  ├─ <span class="session">S14</span>  Brand profiles + asset library + website management                <span class="arrow">✅</span>
+  ├─ <span class="session">S15</span>  Trend Research + Audience Analysis specialist agents               <span class="arrow">✅</span>
+  ├─ <span class="session">S16</span>  Content Strategy + Content Creator specialist agents               <span class="arrow">✅</span>
+  └─ <span class="session">S17</span>  Visual/Media + SEO &amp; Hashtag specialist agents                     <span class="arrow">✅</span>
+  <span class="layer">LAYER 4 — Frontend + Agents</span> <span class="meta">[parallel ×7]</span>
+  ├─ <span class="session">S18</span>  Community Manager + Analytics Reporting specialist agents          <span class="arrow">✅</span>
+  ├─ <span class="session">S19</span>  Next.js 15 scaffold (Clerk auth, tRPC client, dashboard shell)     <span class="arrow">✅</span>
+  ├─ <span class="session">S20</span>  Content list, create, edit pages + social connections UI           <span class="arrow">✅</span>
+  ├─ <span class="session">S21</span>  Content calendar UI + social connections pages                     <span class="arrow">✅</span>
+  ├─ <span class="session">S22</span>  Analytics dashboard + billing management pages                     <span class="arrow">✅</span>
+  ├─ <span class="session">S23</span>  Website builder (GrapeJS editor)                                   <span class="arrow">✅</span>
+  └─ <span class="session">S24</span>  Chat interface + agent activity &amp; approval dashboard               <span class="arrow">✅</span>
+  <span class="layer">LAYER 5 — Complex Features</span> <span class="meta">[parallel ×5]</span>
+  ├─ <span class="session">S25</span>  Brand management + settings + onboarding flow                      <span class="arrow">✅</span>
+  ├─ <span class="session">S26</span>  Expo mobile app (Clerk auth, tRPC, dashboard, chat, approvals)     <span class="arrow">✅</span>
+  ├─ <span class="session">S27</span>  Mobile offline support (SQLite cache, background sync)             <span class="arrow">✅</span>
+  ├─ <span class="session">S28</span>  Tauri v2 desktop app scaffold                                      <span class="arrow">✅</span>
+  └─ <span class="session">S29</span>  WhatsApp Business + Slack communication integrations               <span class="arrow">✅</span>
+  <span class="layer">LAYER 6 — Integration + Infra</span> <span class="meta">[parallel ×4]</span>
+  ├─ <span class="session">S30</span>  Agent ↔ API bridge + Langfuse observability                        <span class="arrow">✅</span>
+  ├─ <span class="session">S31</span>  Additional shadcn/ui components                                    <span class="arrow">✅</span>
+  ├─ <span class="session">S32</span>  Playwright E2E test suite                                          <span class="arrow">✅</span>
+  ├─ <span class="session">S33</span>  Integration test suite + k6 load tests                             <span class="arrow">✅</span>
+  └─ <span class="session">S34</span>  Terraform AWS infrastructure + GitHub Actions deploy pipeline      <span class="arrow">✅</span>
+  <span class="model-tag">MILESTONE: rename Smugz → Pindeo across entire codebase                   ✅</span>
+
+<span class="layer">PHASE 2 — WIRING</span>  <span class="meta">(8 commits, 5,132 lines)</span>
+<span class="pipe">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+  <span class="layer">LAYER 1</span> <span class="meta">[parallel ×4]</span>
+  ├─ <span class="session">P2-S01</span>  API router registration + package builds                        <span class="arrow">✅</span>
+  ├─ <span class="session">P2-S02</span>  Prisma middleware (tenant isolation, soft deletes)              <span class="arrow">✅</span>
+  ├─ <span class="session">P2-S03</span>  Clerk auth middleware wired end-to-end                          <span class="arrow">✅</span>
+  └─ <span class="session">P2-S04</span>  tRPC procedures protected with auth context                    <span class="arrow">✅</span>
+  <span class="layer">LAYER 2</span> <span class="meta">[parallel ×2]</span>
+  ├─ <span class="session">P2-S05</span>  Database seed data                                              <span class="arrow">✅</span>
+  └─ <span class="session">P2-S06</span>  Python agent config wired to API                               <span class="arrow">✅</span>
+  <span class="layer">LAYER 3</span> <span class="meta">[sequential]</span>
+  ├─ <span class="session">P2-S07</span>  End-to-end Clerk auth with protected tRPC procedures            <span class="arrow">✅</span>
+  ├─ <span class="session">P2-S08</span>  Web: replace all mock hooks with real tRPC queries              <span class="arrow">✅</span>
+  ├─ <span class="session">P2-S09</span>  Dev scripts, Makefile, docker-compose updates                   <span class="arrow">✅</span>
+  ├─ <span class="session">P2-S10</span>  Error boundaries + loading skeletons for all routes             <span class="arrow">✅</span>
+  ├─ <span class="session">P2-S11</span>  Stripe webhooks + subscription lifecycle + usage limits         <span class="arrow">✅</span>
+  └─ <span class="session">P2-S12</span>  CORS, rate limits, security headers, Docker hardening           <span class="arrow">✅</span>
+
+<span class="layer">PHASE 3 — INTEGRATIONS</span>  <span class="meta">(9 commits, 17,506 lines)</span>
+<span class="pipe">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+  <span class="layer">LAYER 1</span> <span class="meta">[parallel ×4]</span>
+  ├─ <span class="session">P3-S01</span>  Social OAuth — YouTube, Instagram, TikTok, Twitter, Facebook    <span class="arrow">✅</span>
+  ├─ <span class="session">P3-S02</span>  Social OAuth — LinkedIn, Pinterest, Threads, Bluesky, Snapchat  <span class="arrow">✅</span>
+  ├─ <span class="session">P3-S03</span>  Mobile — all screens wired to real tRPC queries                 <span class="arrow">✅</span>
+  └─ <span class="session">P3-S04</span>  ClickHouse aggregation queries + Postgres fallback              <span class="arrow">✅</span>
+  <span class="layer">LAYER 2</span> <span class="meta">[parallel ×4]</span>
+  ├─ <span class="session">P3-S05</span>  WhatsApp Business Cloud API + webhooks                          <span class="arrow">✅</span>
+  ├─ <span class="session">P3-S06</span>  Slack bot (events, interactions, Block Kit)                     <span class="arrow">✅</span>
+  ├─ <span class="session">P3-S07</span>  Cross-platform publishing pipeline + content scheduler          <span class="arrow">✅</span>
+  └─ <span class="session">P3-S08</span>  Real-time agent chat with streaming responses                   <span class="arrow">✅</span>
+  <span class="layer">LAYER 3</span> <span class="meta">[parallel ×3]</span>
+  ├─ <span class="session">P3-S09</span>  Push notifications (web-push) + email (Resend)                  <span class="arrow">✅</span>
+  ├─ <span class="session">P3-S10</span>  Analytics dashboard wired to real ClickHouse data               <span class="arrow">✅</span>
+  └─ <span class="session">P3-S11</span>  Content publishing UI (platform previews + scheduling)          <span class="arrow">✅</span>
+  <span class="layer">LAYER 4</span> <span class="meta">[parallel ×2]</span>
+  ├─ <span class="session">P3-S12</span>  Integration tests (social OAuth, comms, publishing, chat)       <span class="arrow">✅</span>
+  └─ <span class="session">P3-S13</span>  Phase 3 plan + remaining wiring                                 <span class="arrow">✅</span>
+
+<span class="layer">PHASE 4 — PRODUCTION FEATURES</span>  <span class="meta">(12 commits, 12,837 lines)</span>
+<span class="pipe">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+  <span class="layer">LAYER 1</span> <span class="meta">[parallel ×2]</span>
+  ├─ <span class="session">P4-S01</span>  Website deploy pipeline (HTML gen, S3, CloudFront invalidation) <span class="arrow">✅</span>
+  └─ <span class="session">P4-S02</span>  Agent orchestration (HTTP trigger, HMAC callback, task exec)    <span class="arrow">✅</span>
+  <span class="layer">LAYER 2</span> <span class="meta">[parallel ×4]</span>
+  ├─ <span class="session">P4-S03</span>  Settings module (user prefs, team management, API keys)         <span class="arrow">✅</span>
+  ├─ <span class="session">P4-S04</span>  OpenTelemetry (NodeSDK, 8 metrics, distributed tracing)         <span class="arrow">✅</span>
+  ├─ <span class="session">P4-S05</span>  Onboarding → real agent activation                              <span class="arrow">✅</span>
+  └─ <span class="session">P4-S06</span>  Mobile offline-first SQLite (migrations, cache, stale-while-R)  <span class="arrow">✅</span>
+  <span class="layer">LAYER 3</span> <span class="meta">[parallel ×3]</span>
+  ├─ <span class="session">P4-S07</span>  Desktop native features + GitHub Actions release pipeline       <span class="arrow">✅</span>
+  ├─ <span class="session">P4-S08</span>  Agent cost tracking + usage dashboard                           <span class="arrow">✅</span>
+  └─ <span class="session">P4-S09</span>  k6 load tests + smoke tests (full-flow, deploy)                 <span class="arrow">✅</span>
+  <span class="layer">LAYER 4</span> <span class="meta">[parallel ×3]</span>
+  ├─ <span class="session">P4-S10</span>  Notification digest (daily/weekly, email/WhatsApp/push/Slack)   <span class="arrow">✅</span>
+  ├─ <span class="session">P4-S11</span>  Public REST API v1 + OpenAPI spec + developer portal            <span class="arrow">✅</span>
+  └─ <span class="session">P4-S12</span>  Final polish — CI/CD, Makefile, CONTRIBUTING, .env.example      <span class="arrow">✅</span>
+
+<span class="pipe">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+  <span class="arrow">TOTAL</span>   4 phases · 8 layers · 34+12 sessions · 69 commits · 510 files
+          ~102,000 lines · ~36M tokens · 49h 9m wall clock
+          Working tree: <span class="session">CLEAN ✅</span>
+<span class="pipe">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span></pre>
     </div>
   </div>
 </section>
